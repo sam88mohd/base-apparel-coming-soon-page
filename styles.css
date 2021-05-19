@@ -1,0 +1,80 @@
+:root {
+    --desaturated-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%); 
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    color: var(--desaturated-red);
+}
+
+.container {
+    display: flex;
+    background:url(./images/bg-pattern-desktop.svg);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+}
+
+.content-in {
+    margin: 5em 10em;
+}
+h2 {
+    font-size: 5em;
+    font-weight: 200;
+    letter-spacing: 5px;
+}
+
+span {
+    font-weight: 600;
+    color: black;
+}
+
+form {
+    display: flex;
+    border: 1px solid var(--desaturated-red);
+    border-radius: 25px;
+}
+
+input {
+    flex-grow: 2;
+    border: none;
+    margin: 10px;
+    height: 2em;
+    padding-left: 10px;
+    overflow:hidden;
+    color: var(--soft-red);
+
+    /*background: url(./images/icon-error.svg) no-repeat 100%;*/
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    width: 20%;
+}
+
+button:hover {
+    background: var(--desaturated-red);
+}
+
+figure {
+    margin: auto;
+}
+
+.error {
+    margin: 5px;
+    padding-left: 10px;
+    color: red;
+}

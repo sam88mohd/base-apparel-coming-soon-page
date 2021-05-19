@@ -5,28 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Base Apparel Coming Soon Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <section class="container">
-        <figure>
-            <img src="./images/logo.svg" alt="logo" class="logo">
-            <img src="./images/hero-desktop.jpg" alt="hero" class="hero">
-        </figure>
         <section class="content">
-            <h2>WE'RE <span>COMING SOON</span></h2>
-            <p>Hello fellow shoppers! We're currently building our new fashion store.
-                Add your email below to stay up-to-date with announcements and our launch deals
-            </p>
-            <form action="/">
-                <input type="email" class="email" required>
-                <button type="submit" class="submit">
-                    <img src="./images/icon-arrow.svg" alt="">
-                </button>
-            </form>
+            <section class="content-in">
+                <figure>
+                    <img src="./images/logo.svg" alt="logo" class="logo">
+                </figure>
+                <h2>WE'RE <span>COMING SOON</span></h2>
+                <p>Hello fellow shoppers! We're currently building our new fashion store.
+                    Add your email below to stay up-to-date with announcements and our launch deals
+                </p>
+                <form name="form" action="/" id="form">
+                    <input type="text" id="email" placeholder="Email Address">
+                    <button id="submit" type="submit"><img src="./images/icon-arrow.svg" alt="arrow"></button>
+                </form>
+                <div class="error"></div>
+            </section>
+        </section>
+        <section class="foto">
+                <img src="./images/hero-desktop.jpg" alt="hero" class="hero">   
         </section>
     </section>
     <script>
+        'use strict'
+        document.getElementById('email').addEventListener('click', () => {
+            'use strict';
+            document.getElementById('email').removeAttribute('style', 'background: url(./images/icon-error.svg) no-repeat 100%;');
+            document.querySelector('.error').innerText = '';
+        });
 
+        document.getElementById('form').addEventListener('submit', event => {
+            'use strict';
+            event.preventDefault();
+            if(document.getElementById('email').value === '' || !(/^\S+@\S+$/.test(document.getElementById('email').value))){
+                document.getElementById('email').setAttribute('style', 'background: url(./images/icon-error.svg) no-repeat 100%;');
+                document.querySelector('.error').innerText = "Please provide a valid email";
+            }
+        })
     </script>
 </body>
 </html>
